@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
 
+        Barryvdh\Cors\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -227,5 +229,20 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    /*
+    |--------------------------------------------------------------------
+    |ADMIN SECTION
+    |--------------------------------------------------------------------
+     */
+    'admin_email' => env('ADMIN_EMAIL'),
+    'admin_pass' => env('ADMIN_PASS'),
+    'admin_name' => env('ADMIN_NAME'),
+    'admin_last_name' => env('ADMIN_LAST_NAME'),
+    'admin_username' => env('ADMIN_USERNAME'),
+    'admin_phone' => env('ADMIN_PHONE'),
+    'admin_city' => env('ADMIN_CITY'),
+    'admin_sex' => env('ADMIN_SEX'),
+    'admin_birthday' => env('ADMIN_BIRTHDAY'),
 
 ];

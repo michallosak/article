@@ -13,6 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', 'Auth\AuthController@register');
+Route::post('login', 'Auth\AuthController@login');
+
+
+
+Route::group(['middleware' => 'auth:api'], function (){
+
+    // LOGGED (No Activated)
+
+    Route::post('activate-account', 'Auth\ActivateController@activateAccount');    //activate account
+
+    Route::group(['middleware' => 'activated'], function (){
+
+        // ACTIVATED ACCOUNT
+
+
+    });
+
 });
